@@ -22,4 +22,8 @@ def create_app():
     # from .carpeta import <nom_paquete>
     # app.register_blueprint(<nom_paquete>,url_prefix='/<nom_url>')
 
+    #registramos el blueprint que tiene la parte del website
+    from .website import website
+    app.register_blueprint(website,url_prefix='/website')
+
     return app

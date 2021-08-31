@@ -2,7 +2,11 @@ from app import create_app
 from flask_ngrok import run_with_ngrok
 
 RUN_TYPE = 'LOCAL'
-
+'''
+El tipo de run que queremos. 
+    LOCAL: con el servidor local sin NGROK
+    NGROK: usando un tunel NGROK para compartir
+'''
 #creamos una instancia de la app
 servidor_mapas = create_app()
 
