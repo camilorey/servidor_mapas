@@ -8,13 +8,13 @@ El tipo de run que queremos.
     NGROK: usando un tunel NGROK para compartir
 '''
 #creamos una instancia de la app
-servidor_mapas = create_app()
+app = create_app()
 
 if RUN_TYPE == 'LOCAL':
     #ponemos a correr la app
-    servidor_mapas.run(port=6666)
+    app.run()
 else:
     #envolvemos esto con ngrok
-    run_with_ngrok(servidor_mapas)
+    run_with_ngrok(app)
     #ponemos a correr la app en una URL generada por NGROK
-    servidor_mapas.run()
+    app.run()

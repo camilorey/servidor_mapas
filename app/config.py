@@ -18,18 +18,24 @@ class AppConfig:
 
 class DevConfig(AppConfig):
     '''
-    Esta clase extiende App Config y agrega unas configuraciones
+    Esta clase extiende AppConfig y agrega unas configuraciones
     adicionales para desarrollo.
     '''
-    FLASK_ENV = 'DEVELOPMENT'
+
+    FLASK_ENV = 'development'
     DEBUG = True
     TESTING = True
-    DATABASE_URI = environ.get('DEV_DATABASE_URI')
+    SQLALCHEMY_DATABASE_URI = environ.get('DEV_DATABASE_URI')
 
 class ProdConfig(AppConfig):
-    FLASK_ENV = 'PRODUCTION'
+    '''
+    Esta clase extiende AppConfig y agrega configuraciones para
+    producción.
+    '''
+
+    FLASK_ENV = 'production'
     DEBUG = False
     TESTING = False
-    DATABASE_URI = environ.get('PROD_DATABASE_URI')
+    SQLALCHEMY_DATABASE_URI = environ.get('PROD_DATABASE_URI')
 
 
